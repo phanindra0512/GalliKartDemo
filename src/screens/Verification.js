@@ -18,7 +18,7 @@ function Verification({ navigation }) {
                     <Text style={{ fontSize: 20, fontFamily: 'ProximaNova-Bold', paddingTop: 5, lineHeight: 20, color: '#002F72' }}>to verify account.</Text>
                     <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center', }}>
                         <TextInput
-                            style={{ width: 250 }}
+                            style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                             keyboardType="number-pad"
                             label="Enter OTP"
                             value={isOtp}

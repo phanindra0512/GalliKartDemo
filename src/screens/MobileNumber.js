@@ -18,7 +18,7 @@ function MobileNumber({ navigation }) {
                     <Text style={{ fontSize: 20, fontFamily: 'ProximaNova-Bold', paddingTop: 5, lineHeight: 20, color: '#002F72', }}>to your mobile number.</Text>
                     <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
                         <TextInput
-                            style={{ width: 250 }}
+                            style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                             keyboardType="number-pad"
                             label="Mobile Number"
                             value={isMobile}

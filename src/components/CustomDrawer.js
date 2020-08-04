@@ -1,0 +1,57 @@
+import React, { useState } from 'react'
+import { View, Text } from 'react-native'
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { Avatar } from 'react-native-elements';
+import { Title, Caption, Divider, Drawer } from 'react-native-paper';
+
+function CustomDrawer(props) {
+
+    return (
+        <View style={{ flex: 1, paddingTop: 30, }}>
+            <DrawerContentScrollView {...props}>
+                <View style={{ flex: 1, }}>
+                    <View style={{ flex: 1, flexDirection: 'row', marginBottom: 20, }}>
+                        <Avatar
+                            rounded
+                            size={60}
+                            source={{
+                                uri:
+                                    'https://successroute.ca/img/default.png',
+                            }}
+                            showEditButton
+                            onPress={() => console.log("Works!")}
+                            containerStyle={{ marginLeft: 15 }}
+                        />
+                        <View style={{ flex: 1.1, marginLeft: 20, justifyContent: 'center', }}>
+                            <Title style={{ color: '#002F72', fontFamily: 'ProximaNova-Bold' }}>Sai phanindra</Title>
+                            <Caption style={{ color: '#002F72', fontFamily: 'ProximaNova-Bold', marginTop: -5 }}>9505876290</Caption>
+                        </View>
+                    </View>
+                    <Divider style={{ backgroundColor: '#002F72' }} />
+                    <Drawer.Section style={{ marginTop: 15 }} >
+                        <DrawerItem
+                            icon={({ focused, color, size }) => (
+                                <Icon name="home-outline" color="#002F72" size={25} />
+                            )}
+                            label="Home"
+                            labelStyle={{ color: '#002F72', fontFamily: 'ProximaNova-Bold', fontSize: 18 }}
+
+                            onPress={() => { props.navigation.navigate('Dashboard') }}
+                        />
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <Icon name="comment-text-outline" color="#002F72" size={size} />
+                            )}
+                            label="My orders"
+                            labelStyle={{ fontSize: 18, color: '#002F72', fontFamily: 'ProximaNova-Bold' }}
+                            onPress={() => { props.navigation.navigate('MyOrders') }}
+                        />
+                    </Drawer.Section>
+                </View>
+            </DrawerContentScrollView>
+        </View>
+    )
+}
+
+export default CustomDrawer
