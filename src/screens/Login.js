@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, ImageBackground, Image } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 function Login({ navigation }) {
 
@@ -44,7 +45,7 @@ function Login({ navigation }) {
                             <Button
                                 contentStyle={{ backgroundColor: '#002F72', width: 250, borderRadius: 5 }}
                                 labelStyle={{ color: '#fff' }}
-                                onPress={() => console.log('login pressed')}
+                                onPress={() => navigation.navigate('Dashboard')}
                             >
                                 Login
                             </Button>
