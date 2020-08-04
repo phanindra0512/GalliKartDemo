@@ -19,7 +19,7 @@ function Signup({ navigation }) {
 
                     <View style={{ flex: 0.2, alignItems: 'center', justifyContent: 'center', }}>
                         <TextInput
-                            style={{ width: 250 }}
+                            style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                             label="First Name"
                             value={isFirstName}
                             mode="outlined"
@@ -29,7 +29,7 @@ function Signup({ navigation }) {
                     </View>
                     <View style={{ flex: 0.2, alignItems: 'center', justifyContent: 'center', }}>
                         <TextInput
-                            style={{ width: 250 }}
+                            style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                             label="Last Name"
                             value={isLastName}
                             mode="outlined"
@@ -49,7 +49,7 @@ function Signup({ navigation }) {
                     </View>
                     <View style={{ flex: 0.2, alignItems: 'center', justifyContent: 'center', }}>
                         <TextInput
-                            style={{ width: 250 }}
+                            style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                             label="Password"
                             secureTextEntry
                             value={isPassword}
@@ -60,7 +60,7 @@ function Signup({ navigation }) {
                     </View>
                     <View style={{ flex: 0.2, alignItems: 'center', justifyContent: 'center', }}>
                         <TextInput
-                            style={{ width: 250 }}
+                            style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                             label="Confirm Password"
                             secureTextEntry
                             value={isConfirmPassword}

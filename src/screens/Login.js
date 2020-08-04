@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, ImageBackground, Image } from 'react-native'
+import { View, Text, ImageBackground, Image, KeyboardAvoidingView } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
@@ -7,6 +7,7 @@ function Login({ navigation }) {
 
     const [isMobile, setIsMobile] = useState('')
     const [isPassword, setIsPassword] = useState('')
+    const Theme = { colors: { primary: '#002F72', text: 'black', placeholder: 'black', } }
 
     return (
         <View style={{ flex: 1, }}>
@@ -19,8 +20,9 @@ function Login({ navigation }) {
                         <Text style={{ textAlign: 'center', fontSize: 25, paddingVertical: 10, color: '#002F72', fontFamily: 'ProximaNova-Bold' }}>Login</Text>
                         <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center', }}>
                             <TextInput
-                                style={{ width: 250 }}
+                                style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                                 keyboardType="number-pad"
+                                // theme={Theme}
                                 label="Mobile Number"
                                 value={isMobile}
                                 mode="outlined"
@@ -31,7 +33,7 @@ function Login({ navigation }) {
 
                         <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center', }}>
                             <TextInput
-                                style={{ width: 250 }}
+                                style={{ width: 250, fontFamily: 'ProximaNova-Bold' }}
                                 secureTextEntry
                                 label="Password"
                                 value={isPassword}
