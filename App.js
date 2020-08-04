@@ -8,7 +8,7 @@ import Login from './src/screens/Login'
 import Signup from './src/screens/Signup'
 import RegisterSuccess from './src/screens/RegisterSuccess'
 import Loading from './src/screens/Loading'
-
+import Dashboard from './src/screens/Dashboard'
 
 const Stack = createStackNavigator()
 
@@ -24,6 +24,7 @@ function App() {
         <Stack.Screen name="Verification" component={Verification} options={{ headerShown: false }} />
         <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
         <Stack.Screen name="RegisterSuccess" component={RegisterSuccess} options={{ headerShown: false }} />
+        <Stack.Screen name="Dashboard" component={Dashboard}  />
       </Stack.Navigator>
     </NavigationContainer>
   )
