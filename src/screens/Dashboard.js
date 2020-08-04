@@ -1,13 +1,15 @@
 import React from 'react';
 import {View, Text, Image, ImageBackground,TouchableOpacity,Alert} from 'react-native';
+import ImageSnapCarousel from './components/ImageCarousel';
 
 function Dashboard() {
     return (
         <View style={{flex:1,backgroundColor:'#ccc'}}>
-            <View style={{flex:1}}> 
-                <Image 
+            <View style={{flex:1,paddingTop:10,alignSelf:'center'}}> 
+                {/* <Image 
                 source={require('../../assets/market.png')} style={{alignSelf:'center',marginTop:10,borderColor:'grey',borderWidth:3,borderRadius:5,height:200,width:350}}
-                />
+                /> */}
+                <ImageSnapCarousel />
             </View>
             <View style={{flex:2,justifyContent:'center'}}> 
             <View style={{ flex: 1, margin: 10, borderColor: 'grey', borderWidth: 2, borderRadius: 5 }}>
