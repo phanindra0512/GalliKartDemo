@@ -12,6 +12,9 @@ import RegisterSuccess from './src/screens/RegisterSuccess'
 import Loading from './src/screens/Loading'
 import Dashboard from './src/screens/Dashboard'
 import MyOrders from './src/screens/MyOrders'
+import ProductList from './src/screens/ProductList'
+import MedicineList from './src/screens/MedicineList';
+import ParcelDetails from './src/screens/ParcelDetails'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -51,6 +54,9 @@ function App() {
         <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
         <Stack.Screen name="RegisterSuccess" component={RegisterSuccess} options={{ headerShown: false }} />
         <Stack.Screen name="Dashboard" component={DrawerView} options={{ headerShown: false }} />
+        <Stack.Screen name="ProductList" component={ProductList}  />
+        <Stack.Screen name="MedicineList" component={MedicineList}  />
+        <Stack.Screen name="ParcelDetails" component={ParcelDetails}  />
       </Stack.Navigator>
     </NavigationContainer>
   )
