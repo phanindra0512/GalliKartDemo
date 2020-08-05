@@ -37,7 +37,7 @@ class ImageSnapCarousel extends Component {
         return (
             <View key={index} style={{ flex: 1 }}>
                 <Card elevation={10}>
-                    <Card.Cover source={{ uri: item.image }} style={{ width: 340, height: 200,borderColor:'grey',borderWidth:2,borderRadius:5 ,alignSelf:'center'}} />
+                    <Card.Cover source={{ uri: item.image }} style={{ width: 340, height: 200,borderColor:'grey',borderWidth:2,borderRadius:5 ,alignSelf:'center',}} />
                     {/* <Text style={{ textAlign: 'center', padding: 10, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{item.caption}</Text> */}
                 </Card>
             </View>
