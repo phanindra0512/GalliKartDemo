@@ -45,7 +45,9 @@ function DrawerView() {
 
 
 function App() {
+  console.disableYellowBox = true;
   return (
+
     <NavigationContainer>
       <StatusBar barStyle="light-content" backgroundColor="#002459" />
       <Stack.Navigator initialRouteName={Loading}>
