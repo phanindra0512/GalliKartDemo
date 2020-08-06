@@ -39,6 +39,15 @@ function CustomDrawer(props) {
 
                             onPress={() => { props.navigation.navigate('Dashboard') }}
                         />
+                         <DrawerItem
+                            icon={({ focused, color, size }) => (
+                                <Icon name="information" color="#002F72" size={25} />
+                            )}
+                            label="Product Details"
+                            labelStyle={{ color: '#002F72', fontFamily: 'ProximaNova-Bold', fontSize: 18 }}
+
+                            onPress={() => { props.navigation.navigate('ProductDetails') }}
+                        />
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon name="comment-text-outline" color="#002F72" size={size} />
