@@ -15,6 +15,7 @@ import MyOrders from './src/screens/MyOrders'
 import ProductList from './src/screens/ProductList'
 import MedicineList from './src/screens/MedicineList';
 import ParcelDetails from './src/screens/ParcelDetails'
+import ProductDetails from './src/screens/ProductDetails'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -36,6 +37,7 @@ function DrawerView() {
       drawerContent={props => <CustomDrawer {...props} />}
     >
       <Drawer.Screen name="Dashboard" component={Dashboard} />
+      <Drawer.Screen name="ProductDetails" component={ProductDetails} />
       <Drawer.Screen name="MyOrders" component={MyOrders} />
     </Drawer.Navigator>
   )
