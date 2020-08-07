@@ -99,7 +99,7 @@ function Pharmacy({ props, navigation }) {
     return (
         <View style={{ flex: 1, }}>
             <HeaderComponent title={isTitle} name="arrow-left" size={23} {...props} />
-            <View style={{ flex: 0.3, flexDirection: 'row', marginTop: 10 }}>
+            <View style={{ flex: 0.22, flexDirection: 'row', marginTop: 10 }}>
 
                 <TouchableOpacity style={{ flex: 1, }} onPress={() => { setIsValue(0); setIsTitle('Groceries') }}>
                     <View style={{ flex: 1, }}>
@@ -154,7 +154,7 @@ function Pharmacy({ props, navigation }) {
                                                 prdDiscount: medicineData.productDiscount
                                             }
                                         )}>
-                                            <View key={medicineData.prdid} style={{ flex: 1, height: 180, flexDirection: 'row', }}>
+                                            <View key={index} style={{ flex: 1, height: 180, flexDirection: 'row', }}>
                                                 <View style={{ flex: 0.5, }}>
                                                     <View style={{ flex: 0.9, alignItems: 'center', justifyContent: 'flex-end', }}>
                                                         <Image source={{ uri: medicineData.productImage }} style={{ width: 110, height: 140, borderRadius: 5 }} />
@@ -254,7 +254,7 @@ function Pharmacy({ props, navigation }) {
                                                 prdDiscount: groceryItem.productDiscount
                                             }
                                         )}>
-                                            <View key={groceryItem.prdid} style={{ flex: 1, height: 180, flexDirection: 'row', }}>
+                                            <View key={index} style={{ flex: 1, height: 180, flexDirection: 'row', }}>
                                                 <View style={{ flex: 0.5, }}>
                                                     <View style={{ flex: 0.9, alignItems: 'center', justifyContent: 'flex-end', }}>
                                                         <Image source={{ uri: groceryItem.productImage }} style={{ width: 110, height: 140, borderRadius: 5 }} />

@@ -30,7 +30,7 @@ function ProductDetails({ navigation, route }) {
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', paddingLeft: 10, }}>
                     <Text style={{ fontSize: 23, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{route.params.prdName}</Text>
-                    <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 15, paddingLeft: 5 }}>Price : {route.params.prdPrice}</Text>
+                    <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 15, paddingLeft: 5, color: '#002F72' }}>Price : {'\u20B9'} {route.params.prdPrice}</Text>
                     <Text style={{ fontSize: 13, color: '#888', fontFamily: 'ProximaNova-Bold', paddingLeft: 5 }}>Discount : {route.params.prdDiscount}</Text>
                     {
                         isVisible ?
@@ -66,7 +66,7 @@ function ProductDetails({ navigation, route }) {
                     style={{ backgroundColor: '#002F72' }}
                     icon="cart"
                     color="#fff"
-                // onPress={() => navigation.navigate('CartDetails')}
+                    onPress={() => navigation.navigate('CartDetails')}
                 />
             </View>
 

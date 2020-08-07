@@ -15,6 +15,9 @@ import MyOrders from './src/screens/MyOrders'
 import Groceries from './src/screens/Groceries'
 import Pharmacy from './src/screens/Pharmacy'
 import ProductDetails from './src/screens/ProductDetails'
+import CartDetails from './src/screens/CartDetails'
+import ChooseVendor from './src/screens/ChooseVendor'
+import PaymentScreen from './src/screens/PaymentScreen'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -74,6 +77,51 @@ function App() {
             },
           }}
         />
+
+        <Stack.Screen name="CartDetails" component={CartDetails}
+          options={{
+            title: "Cart Detail",
+            headerTitleAlign: 'center',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'ProximaNova-Bold',
+              fontSize: 23
+            },
+            headerStyle: {
+              backgroundColor: '#002F72'
+            },
+          }}
+        />
+
+        <Stack.Screen name="ChooseVendor" component={ChooseVendor}
+          options={{
+            title: "Select Vendor",
+            headerTitleAlign: 'center',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'ProximaNova-Bold',
+              fontSize: 23
+            },
+            headerStyle: {
+              backgroundColor: '#002F72'
+            },
+          }}
+        />
+        <Stack.Screen name="PaymentScreen" component={PaymentScreen}
+          options={{
+            title: "Payment",
+            headerTitleAlign: 'center',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'ProximaNova-Bold',
+              fontSize: 23
+            },
+            headerStyle: {
+              backgroundColor: '#002F72'
+            },
+          }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   )
