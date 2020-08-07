@@ -43,25 +43,25 @@ function Dashboard({ navigation, props }) {
                 <View style={{ flex: 1, }}>
                     <Text style={{ fontSize: 20, fontFamily: 'ProximaNova-Bold', paddingVertical: 15, paddingLeft: 15, color: '#002F72' }}>shop by categories</Text>
                 </View>
-                
+
                 <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 10, justifyContent: 'space-around' }}>
-                <TouchableOpacity onPress={()=> navigation.navigate('ProductList')}>
-                    <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center' }}>
-                        <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT970pg7X_HnpBhmov_hQXGljzTNiFZp4hDPg&usqp=CAU' }} style={{ width: 90, height: 90, borderRadius: 50, borderWidth: 1, borderColor: '#000' }} />
-                        <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 18, textAlign: 'center', color: '#002F72' }}>Groceries</Text>
-                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('Groceries')}>
+                        <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center' }} >
+                            <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT970pg7X_HnpBhmov_hQXGljzTNiFZp4hDPg&usqp=CAU' }} style={{ width: 90, height: 90, borderRadius: 50, borderWidth: 1, borderColor: '#000' }} />
+                            <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 18, textAlign: 'center', color: '#002F72' }}>Groceries</Text>
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={()=> navigation.navigate('MedicineList')}>
-                    <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center' }}>
-                        <Image source={{ uri: 'https://nu.aeon.co/images/afef287f-dd6f-4a6a-b8a6-4f0a09330657/header_sized-kendal-l4ikccachoc-unsplash.jpg' }} style={{ width: 90, height: 90, borderRadius: 50, borderWidth: 1, borderColor: '#000' }} />
-                        <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 18, textAlign: 'center', color: '#002F72' }}>Pharmacy</Text>
-                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('Pharmacy')}>
+                        <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center' }}>
+                            <Image source={{ uri: 'https://nu.aeon.co/images/afef287f-dd6f-4a6a-b8a6-4f0a09330657/header_sized-kendal-l4ikccachoc-unsplash.jpg' }} style={{ width: 90, height: 90, borderRadius: 50, borderWidth: 1, borderColor: '#000' }} />
+                            <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 18, textAlign: 'center', color: '#002F72' }}>Pharmacy</Text>
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={()=> navigation.navigate('ParcelDetails')}>
-                    <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center' }}>
-                        <Image source={{ uri: 'https://www.kindpng.com/picc/m/65-653183_defence-courier-service-tracking-hd-png-download.png' }} style={{ width: 90, height: 90, borderRadius: 50, borderWidth: 1, borderColor: '#000' }} />
-                        <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 18, textAlign: 'center', color: '#002F72' }}>Parcel</Text>
-                    </View>
+                    <TouchableOpacity onPress={() => alert('Not available right now')}>
+                        <View style={{ flex: 0.3, alignItems: 'center', justifyContent: 'center' }}>
+                            <Image source={{ uri: 'https://www.kindpng.com/picc/m/65-653183_defence-courier-service-tracking-hd-png-download.png' }} style={{ width: 90, height: 90, borderRadius: 50, borderWidth: 1, borderColor: '#000' }} />
+                            <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 18, textAlign: 'center', color: '#002F72' }}>Parcel</Text>
+                        </View>
                     </TouchableOpacity>
                 </View>
 
