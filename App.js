@@ -18,6 +18,7 @@ import ProductDetails from './src/screens/ProductDetails'
 import CartDetails from './src/screens/CartDetails'
 import ChooseVendor from './src/screens/ChooseVendor'
 import PaymentScreen from './src/screens/PaymentScreen'
+import Success from './src/screens/Success'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -63,6 +64,8 @@ function App() {
         <Stack.Screen name="Dashboard" component={DrawerView} options={{ headerShown: false }} />
         <Stack.Screen name="Groceries" component={Groceries} options={{ headerShown: false }} />
         <Stack.Screen name="Pharmacy" component={Pharmacy} options={{ headerShown: false }} />
+        <Stack.Screen name="Success" component={Success} options={{ headerShown: false }} />
+
         <Stack.Screen name="ProductDetails" component={ProductDetails}
           options={{
             title: "Product Detail",
