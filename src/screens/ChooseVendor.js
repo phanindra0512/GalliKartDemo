@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
 import { Card, Title, Subheading, Divider, Button } from 'react-native-paper'
 import { Overlay } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 
 
 const vendorList = [
@@ -32,10 +33,19 @@ const vendorList = [
     }
 ]
 
+const initialState = {
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.015,
+    longitudeDelta: 0.0121,
+}
+
 
 function ChooseVendor({ navigation }) {
 
+
     const [visible, setVisible] = useState(false);
+    const [currentPosition, setCurrentPosition] = useState(initialState)
 
     const showOverlay = () => {
         setVisible(true)
@@ -44,10 +54,40 @@ function ChooseVendor({ navigation }) {
     const hideOverlay = () => {
         setVisible(false)
     }
+
+    // useEffect(() => {
+    //     navigator.geolocation.getCurrentPosition(position => {
+    //         // alert(JSON.stringify(position))
+    //         const { latitude, longitude } = position.coords
+    //         setCurrentPosition({
+    //             ...currentPosition,
+    //             latitude,
+    //             longitude
+    //         })
+    //     },
+    //         error => alert(error.message),
+    //         { timeout: 20000, maximumAge: 1000 }
+    //     )
+
+
+    // }, [])
+
     return (
         <View style={{ flex: 1 }}>
-            <View style={{ flex: 0.8, justifyContent: 'center', alignItems: 'center', }}>
-                <Image source={{ uri: 'https://images.indianexpress.com/2017/05/google-maps-759.jpg' }} style={{ width: '100%', height: '100%' }} />
+            <View style={styles.container}>
+                <MapView
+                    provider={PROVIDER_GOOGLE}
+                    showsUserLocation
+                    style={styles.map}
+                    initialRegion={{
+                        // latitude: 37.78825,
+                        // longitude: -122.4324,
+                        latitude: 16.703285,
+                        longitude: 81.100388,
+                        latitudeDelta: 0.015,
+                        longitudeDelta: 0.0121,
+                    }}
+                />
             </View>
             <View style={{ flex: 1, }}>
                 <Text style={{ fontSize: 19, fontFamily: 'ProximaNova-Bold', color: '#002F72', padding: 10 }}>select vendor :</Text>
@@ -75,7 +115,7 @@ function ChooseVendor({ navigation }) {
                 </ScrollView>
             </View>
             <TouchableOpacity style={styles.confirmButton} onPress={showOverlay}  >
-                <Text style={{ fontSize: 20, fontFamily: 'ProximaNova-Bold', color: '#fff' }}>place order</Text>
+                <Text style={{ fontSize: 20, fontFamily: 'ProximaNova-Bold', color: '#fff' }}>Place order</Text>
                 <Icon name="arrow-right" size={17} color="#fff" style={{ paddingLeft: 3, paddingTop: 3 }} />
             </TouchableOpacity>
 
@@ -166,7 +206,7 @@ function ChooseVendor({ navigation }) {
                                 <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>Subtotal</Text>
                             </View>
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
-                                <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>150</Text>
+                                <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{'\u20B9'} 150</Text>
                             </View>
                         </View>
 
@@ -175,7 +215,7 @@ function ChooseVendor({ navigation }) {
                                 <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>Delivery Charges</Text>
                             </View>
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
-                                <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>50</Text>
+                                <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{'\u20B9'} 50</Text>
                             </View>
                         </View>
                         <View style={{ flex: 0.3, flexDirection: 'row', paddingHorizontal: 10 }}>
@@ -183,7 +223,7 @@ function ChooseVendor({ navigation }) {
                                 <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>Total</Text>
                             </View>
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
-                                <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>200</Text>
+                                <Text style={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{'\u20B9'} 200</Text>
                             </View>
                         </View>
                     </View>
@@ -216,6 +256,14 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginHorizontal: 10,
         marginVertical: 8
+    },
+    container: {
+        // ...StyleSheet.absoluteFillObject,
+        // height: 200,
+        flex: 0.8
+    },
+    map: {
+        ...StyleSheet.absoluteFillObject
     }
 })
 

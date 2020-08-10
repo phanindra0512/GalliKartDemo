@@ -48,6 +48,7 @@ function DrawerView() {
 
 function App() {
   console.disableYellowBox = true;
+  navigator.geolocation = require('@react-native-community/geolocation');
 
 
   return (
