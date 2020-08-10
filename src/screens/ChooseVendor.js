@@ -4,9 +4,7 @@ import { Card, Title, Subheading, Divider, Button } from 'react-native-paper'
 import { Overlay } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
-// import Geolocation from '@react-native-community/geolocation';
 
-// Geolocation.getCurrentPosition(info => console.log(info));
 
 const vendorList = [
     {
@@ -36,8 +34,8 @@ const vendorList = [
 ]
 
 const initialState = {
-    latitude: null,
-    longitude: null,
+    latitude: 37.78825,
+    longitude: -122.4324,
     latitudeDelta: 0.015,
     longitudeDelta: 0.0121,
 }
@@ -77,12 +75,19 @@ function ChooseVendor({ navigation }) {
     return (
         <View style={{ flex: 1 }}>
             <View style={styles.container}>
-                {/* <MapView
+                <MapView
                     provider={PROVIDER_GOOGLE}
                     showsUserLocation
                     style={styles.map}
-                    initialRegion={currentPosition}
-                /> */}
+                    initialRegion={{
+                        // latitude: 37.78825,
+                        // longitude: -122.4324,
+                        latitude: 16.703285,
+                        longitude: 81.100388,
+                        latitudeDelta: 0.015,
+                        longitudeDelta: 0.0121,
+                    }}
+                />
             </View>
             <View style={{ flex: 1, }}>
                 <Text style={{ fontSize: 19, fontFamily: 'ProximaNova-Bold', color: '#002F72', padding: 10 }}>select vendor :</Text>
@@ -255,7 +260,6 @@ const styles = StyleSheet.create({
     container: {
         // ...StyleSheet.absoluteFillObject,
         // height: 200,
-        backgroundColor: 'red',
         flex: 0.8
     },
     map: {
