@@ -47,7 +47,7 @@ function Login({ navigation }) {
                             <Button
                                 contentStyle={{ backgroundColor: '#002F72', width: 250, borderRadius: 5 }}
                                 labelStyle={{ color: '#fff' }}
-                                onPress={() => navigation.navigate('Dashboard')}
+                                onPress={() => navigation.replace('Dashboard')}
                             >
                                 Login
                             </Button>

@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { Divider, Button } from 'react-native-paper'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import CartItems from '../components/CartItems'
+import { BarIndicator } from 'react-native-indicators'
 
 function CartDetails({ navigation }) {
 
     const [isQuantity, setIsQuantity] = useState(0)
+    const [isAnimating, setIsAnimating] = useState(true)
 
-    const incrementQty = () => {
-        const value = isQuantity
-        setIsQuantity(value + 1)
+    const closeIndicator = () => {
+        setTimeout(() => {
+            setIsAnimating(false)
+        }, 2000)
     }
+    useEffect(() => {
+        closeIndicator()
+    }, [])
 
-    const decrementQty = () => {
-        if (isQuantity - 1 > -1) {
-            const value = isQuantity
-            setIsQuantity(value - 1)
-        }
-    }
     return (
         <View style={{ flex: 1, backgroundColor: '#ccc' }}>
             <View style={{ flex: 1, marginHorizontal: 10, marginTop: 10, }}>
@@ -34,12 +34,26 @@ function CartDetails({ navigation }) {
                     <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 20, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, color: '#002F72' }}>Your Cart</Text>
                     <Divider style={{ backgroundColor: '#888' }} />
                     <ScrollView>
-                        <CartItems />
-                        <CartItems />
-                        <CartItems />
-                        <CartItems />
-                        <CartItems />
-                        <CartItems />
+                        {
+                            isAnimating ?
+                                (
+                                    <View
+                                        style={{ flex: 1, justifyContent: "center", alignSelf: "center", }}
+                                    >
+                                        <BarIndicator animating={true} color='#002F72' />
+                                    </View>
+                                ) :
+                                (
+                                    <View>
+                                        <CartItems />
+                                        <CartItems />
+                                        <CartItems />
+                                        <CartItems />
+                                        <CartItems />
+                                        <CartItems />
+                                    </View>
+                                )
+                        }
 
                     </ScrollView>
                 </View>

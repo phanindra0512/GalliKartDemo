@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
-import { Card, Button } from 'react-native-paper';
+import { Card, } from 'react-native-paper';
+import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import PayPal from 'react-native-paypal-gateway';
 import { GooglePay } from 'react-native-google-pay';
@@ -35,6 +36,9 @@ const requestData = {
 };
 
 function PaymentScreen({ navigation }) {
+
+  const [isVisible, setIsVisible] = useState(true)
+
   const paymentPaypal = async () => {
     try {
       PayPal.initialize(PayPal.NO_NETWORK, "AWZq6AwBsDXF0hQPynVFkr6r9weLDVQGx97rP_neAGsN2P36xpj4yDeLh9IvvyoAEB_x80JipoUaOzd1");
@@ -44,6 +48,7 @@ function PaymentScreen({ navigation }) {
         description: 'Galli kart demo payment testing',
       }).then(confirm => {
         console.log('pay success', confirm)
+        setIsVisible(false)
       })
         .catch(error => console.log(error));
     } catch (error) {
@@ -147,11 +152,12 @@ function PaymentScreen({ navigation }) {
 
       </View>
       <Button
-        mode='contained'
-        labelStyle={{ fontSize: 18, fontFamily: 'ProximaNova-Bold', }}
-        style={{ backgroundColor: '#002F72', padding: 5 }}
+        title="CONFIRM"
+        titleStyle={{ fontSize: 18, fontFamily: 'ProximaNova-Bold' }}
+        buttonStyle={{ backgroundColor: '#002F72', }}
+        disabled={isVisible}
         onPress={() => navigation.navigate('Success')}
-      >confirm</Button>
+      />
     </View>
   )
 }

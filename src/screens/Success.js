@@ -15,8 +15,8 @@ function Success({ navigation }) {
                 <Image source={require('../../assets/TQuu.png')} style={{ width: 200, height: 70, marginTop: 221, position: 'absolute' }} />
             </View>
             <Button mode='contained'
-                labelStyle={{ fontSize: 18, fontFamily: 'ProximaNova-Bold', }}
-                style={{ backgroundColor: '#002F72', padding: 5 }}
+                labelStyle={{ fontSize: 15, fontFamily: 'ProximaNova-Bold', }}
+                style={{ backgroundColor: '#002F72', }}
                 onPress={() => navigation.navigate('Dashboard')}
             >
                 Home
