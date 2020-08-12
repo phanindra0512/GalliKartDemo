@@ -12,6 +12,7 @@ import RegisterSuccess from './src/screens/RegisterSuccess'
 import Loading from './src/screens/Loading'
 import Dashboard from './src/screens/Dashboard'
 import MyOrders from './src/screens/MyOrders'
+import ProfileSettings from './src/screens/ProfileSettings'
 import Groceries from './src/screens/Groceries'
 import Pharmacy from './src/screens/Pharmacy'
 import ProductDetails from './src/screens/ProductDetails'
@@ -19,6 +20,12 @@ import CartDetails from './src/screens/CartDetails'
 import ChooseVendor from './src/screens/ChooseVendor'
 import PaymentScreen from './src/screens/PaymentScreen'
 import Success from './src/screens/Success'
+import Notifications from './src/screens/Notifications'
+import Rateus from './src/screens/Rateus'
+import TermsAndConditions from './src/screens/TermsAndConditions'
+
+
+
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -41,6 +48,10 @@ function DrawerView() {
     >
       <Drawer.Screen name="Dashboard" component={Dashboard} />
       <Drawer.Screen name="MyOrders" component={MyOrders} />
+      <Drawer.Screen name="ProfileSettings" component={ProfileSettings} />
+      <Drawer.Screen name="Notifications" component={Notifications} />
+      <Drawer.Screen name="Rateus" component={Rateus} />
+      <Drawer.Screen name="TermsAndConditions" component={TermsAndConditions} />
     </Drawer.Navigator>
   )
 }

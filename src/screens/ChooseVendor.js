@@ -4,6 +4,7 @@ import { Card, Title, Subheading, Divider, Button } from 'react-native-paper'
 import { Overlay } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
+import { BarIndicator } from 'react-native-indicators'
 
 
 const vendorList = [
@@ -45,7 +46,19 @@ function ChooseVendor({ navigation }) {
 
 
     const [visible, setVisible] = useState(false);
+    const [isValue, setIsValue] = useState(false);
+    const [isName, setIsName] = useState('select');
     const [currentPosition, setCurrentPosition] = useState(initialState)
+    const [isAnimating, setIsAnimating] = useState(true)
+
+    const closeIndicator = () => {
+        setTimeout(() => {
+            setIsAnimating(false)
+        }, 2000)
+    }
+    useEffect(() => {
+        closeIndicator()
+    }, [])
 
     const showOverlay = () => {
         setVisible(true)
@@ -55,22 +68,6 @@ function ChooseVendor({ navigation }) {
         setVisible(false)
     }
 
-    // useEffect(() => {
-    //     navigator.geolocation.getCurrentPosition(position => {
-    //         // alert(JSON.stringify(position))
-    //         const { latitude, longitude } = position.coords
-    //         setCurrentPosition({
-    //             ...currentPosition,
-    //             latitude,
-    //             longitude
-    //         })
-    //     },
-    //         error => alert(error.message),
-    //         { timeout: 20000, maximumAge: 1000 }
-    //     )
-
-
-    // }, [])
 
     return (
         <View style={{ flex: 1 }}>
@@ -80,8 +77,6 @@ function ChooseVendor({ navigation }) {
                     showsUserLocation
                     style={styles.map}
                     initialRegion={{
-                        // latitude: 37.78825,
-                        // longitude: -122.4324,
                         latitude: 16.703285,
                         longitude: 81.100388,
                         latitudeDelta: 0.015,
@@ -91,30 +86,48 @@ function ChooseVendor({ navigation }) {
             </View>
             <View style={{ flex: 1, }}>
                 <Text style={{ fontSize: 19, fontFamily: 'ProximaNova-Bold', color: '#002F72', padding: 10 }}>select vendor :</Text>
-                <ScrollView>
-                    {vendorList.map((vendor, index) => {
-                        return (
-                            <Card key={index} style={{ marginHorizontal: 10, marginVertical: 5, paddingVertical: 10 }}>
-                                <Text style={{ fontSize: 18, fontFamily: 'ProximaNova-Bold', color: '#002F72', textAlign: 'center', paddingBottom: 5 }}>{vendor.shopName}</Text>
-                                <Divider style={{ backgroundColor: '#000' }} />
-                                <View style={{ flex: 1, flexDirection: 'row' }}>
-                                    <View style={{ flex: 2 }}>
-                                        <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15 }}>Owner    : {vendor.ownerName}</Text>
-                                        <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15, }}>Address :</Text>
-                                        <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15 }}>{vendor.street},{"\n"}{vendor.area},{vendor.city}</Text>
-                                        <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15 }}>Phone    : {vendor.Phone}</Text>
-                                    </View>
-                                    <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'flex-end', paddingRight: 10 }}>
-                                        <Button labelStyle={{ color: '#002F72', fontFamily: 'ProximaNova-Bold' }}>select</Button>
-                                    </View>
-                                </View>
-                            </Card>
-                        )
+                {
+                    isAnimating ?
+                        (
+                            <View
+                                style={{ flex: 1, justifyContent: "center", alignSelf: "center", }}
+                            >
+                                <BarIndicator animating={true} color='#002F72' />
+                            </View>
+                        ) :
+                        (
 
-                    })}
-                </ScrollView>
+                            <ScrollView>
+                                {vendorList.map((vendor, index) => {
+                                    return (
+                                        <Card key={index} style={{ marginHorizontal: 10, marginVertical: 5, paddingVertical: 10 }}>
+                                            <Text style={{ fontSize: 18, fontFamily: 'ProximaNova-Bold', color: '#002F72', textAlign: 'center', paddingBottom: 5 }}>{vendor.shopName}</Text>
+                                            <Divider style={{ backgroundColor: '#000' }} />
+                                            <View style={{ flex: 1, flexDirection: 'row' }}>
+                                                <View style={{ flex: 2 }}>
+                                                    <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15 }}>Owner    : {vendor.ownerName}</Text>
+                                                    <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15, }}>Address :</Text>
+                                                    <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15 }}>{vendor.street},{"\n"}{vendor.area},{vendor.city}</Text>
+                                                    <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72', paddingLeft: 15 }}>Phone    : {vendor.Phone}</Text>
+                                                </View>
+                                                <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'flex-end', paddingRight: 10 }}>
+                                                    <Button labelStyle={{ color: '#002F72', fontFamily: 'ProximaNova-Bold' }} onPress={() => { setIsValue(true); setIsName('selected') }} >select</Button>
+                                                </View>
+                                            </View>
+                                        </Card>
+                                    )
+
+                                })}
+                            </ScrollView>
+                        )
+                }
             </View>
-            <TouchableOpacity style={styles.confirmButton} onPress={showOverlay}  >
+            <TouchableOpacity style={styles.confirmButton}
+                onPress={() => {
+                    isValue ?
+                        showOverlay() : alert('please select vendor')
+                }}
+            >
                 <Text style={{ fontSize: 20, fontFamily: 'ProximaNova-Bold', color: '#fff' }}>Place order</Text>
                 <Icon name="arrow-right" size={17} color="#fff" style={{ paddingLeft: 3, paddingTop: 3 }} />
             </TouchableOpacity>
@@ -230,17 +243,8 @@ function ChooseVendor({ navigation }) {
                     <View style={{ flex: 0.3, justifyContent: 'flex-end' }}>
                         <Button style={{ backgroundColor: '#002F72', }} labelStyle={{ color: '#fff', fontSize: 15, }} onPress={() => { hideOverlay(); navigation.navigate('PaymentScreen') }}>Pay</Button>
                     </View>
-
-
-
-
-
                 </View>
-
-
             </Overlay>
-
-
         </View>
     )
 }
