@@ -26,7 +26,7 @@ function ProductDetails({ navigation, route }) {
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <View style={{ flex: 0.8, flexDirection: 'row' }}>
                 <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center' }}>
-                    <Image source={{ uri: route.params.prdImage }} style={{ width: 110, height: 110, borderRadius: 50 }} />
+                    <Image source={route.params.prdImage} style={{ width: 110, height: 110, borderRadius: 50 }} />
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', paddingLeft: 10, }}>
                     <Text style={{ fontSize: 23, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{route.params.prdName}</Text>
