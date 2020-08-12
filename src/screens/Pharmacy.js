@@ -8,7 +8,7 @@ function Pharmacy({ props, navigation }) {
     const groceriesData = [
         {
             prdid: '001',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTS0pf7vaYp4oNLaQwSYAnILBq4yHm4BpiKeg&usqp=CAU',
+            productImage: require('../../assets/sugar.jpg'),
             productName: 'Sugar',
             productPrice: '40',
             productDiscount: '10%',
@@ -16,7 +16,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '002',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRhlanGY-A4-7mI6QgBF0JkS38NNAakAew8zg&usqp=CAU',
+            productImage: require('../../assets/chillypowder.jpg'),
             productName: 'Chilly Powder',
             productPrice: '60',
             productDiscount: '5%',
@@ -24,7 +24,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '003',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTknHDjtBSriV9Uv7mJJb_Dc7M4bpqlo1rBag&usqp=CAU',
+            productImage: require('../../assets/tamarind.jpg'),
             productName: 'Tamarind',
             productPrice: '50',
             productDiscount: '7%',
@@ -32,7 +32,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '004',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQcmW-he6rnDYuIu-JaJDpvUIbCffgkbeDz5A&usqp=CAU',
+            productImage: require('../../assets/dhal.jpg'),
             productName: 'Dal',
             productPrice: '75',
             productDiscount: '15%',
@@ -40,7 +40,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '005',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQLPbb1dfcxRDO-76ORekip4P8DfIlfnpWcCw&usqp=CAU',
+            productImage: require('../../assets/aashirvadh.jpg'),
             productName: 'Aata',
             productPrice: '45',
             productDiscount: '10%',
@@ -51,7 +51,7 @@ function Pharmacy({ props, navigation }) {
     const medicinesData = [
         {
             prdid: '301',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSairfHryUWxIe8woUJmavS6UbiOtYcwaovsg&usqp=CAU',
+            productImage: require('../../assets/omee.jpg'),
             productName: 'OMEE',
             productPrice: '45',
             productDiscount: '10%',
@@ -59,7 +59,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '302',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT309GK-FdUQ_Cx86ZHDT3usneYQ_zcmSscvw&usqp=CAU',
+            productImage: require('../../assets/dart.jpg'),
             productName: 'Dart',
             productPrice: '45',
             productDiscount: '10%',
@@ -67,7 +67,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '303',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmAQvz9e5ETHjkvq3tU6WdOjWChfwG0uiPTg&usqp=CAU',
+            productImage: require('../../assets/paracitmol.jpg'),
             productName: 'Paracitmol-250',
             productPrice: '45',
             productDiscount: '10%',
@@ -75,7 +75,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '304',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6rctKTUtQOyJNffiXVK3AABdGoawcwzlAmA&usqp=CAU',
+            productImage: require('../../assets/sanitizer.jpg'),
             productName: 'Hand Sanitizer',
             productPrice: '45',
             productDiscount: '10%',
@@ -83,7 +83,7 @@ function Pharmacy({ props, navigation }) {
         },
         {
             prdid: '305',
-            productImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYJgPdaO3Al94Fh3q7t6aaAvnXYuZt6_tKdg&usqp=CAU',
+            productImage: require('../../assets/dermiford.jpg'),
             productName: 'DarmiFord k5',
             productPrice: '45',
             productDiscount: '10%',
@@ -104,7 +104,7 @@ function Pharmacy({ props, navigation }) {
                 <TouchableOpacity style={{ flex: 1, }} onPress={() => { setIsValue(0); setIsTitle('Groceries') }}>
                     <View style={{ flex: 1, }}>
                         <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT970pg7X_HnpBhmov_hQXGljzTNiFZp4hDPg&usqp=CAU' }} style={{ width: 100, height: 65, borderRadius: 5 }} />
+                            <Image source={require('../../assets/Groceries.jpg')} style={{ width: 100, height: 65, borderRadius: 5 }} />
                         </View>
                         <View style={{ flex: 0.3, justifyContent: 'flex-start', alignItems: 'center', }}>
                             <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>Groceries</Text>
@@ -115,7 +115,7 @@ function Pharmacy({ props, navigation }) {
                 <TouchableOpacity style={{ flex: 1, }} onPress={() => { setIsValue(1); setIsTitle('Pharmacy') }}>
                     <View style={{ flex: 1, }}>
                         <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={{ uri: 'https://nu.aeon.co/images/afef287f-dd6f-4a6a-b8a6-4f0a09330657/header_sized-kendal-l4ikccachoc-unsplash.jpg' }} style={{ width: 100, height: 65, borderRadius: 5 }} />
+                            <Image source={require('../../assets/pharma.jpg')} style={{ width: 100, height: 65, borderRadius: 5 }} />
                         </View>
                         <View style={{ flex: 0.3, justifyContent: 'flex-start', alignItems: 'center', }}>
                             <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>Pharmacy</Text>
@@ -126,7 +126,7 @@ function Pharmacy({ props, navigation }) {
                 <TouchableOpacity style={{ flex: 1, }} onPress={() => alert('Not available')}>
                     <View style={{ flex: 1, }}>
                         <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={{ uri: 'https://www.kindpng.com/picc/m/65-653183_defence-courier-service-tracking-hd-png-download.png' }} style={{ width: 100, height: 65, borderRadius: 5 }} />
+                            <Image source={require('../../assets/Parcel.png')} style={{ width: 100, height: 65, borderRadius: 5 }} />
                         </View>
                         <View style={{ flex: 0.3, justifyContent: 'flex-start', alignItems: 'center', }}>
                             <Text style={{ fontSize: 16, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>Parcel</Text>
@@ -157,7 +157,7 @@ function Pharmacy({ props, navigation }) {
                                             <View key={index} style={{ flex: 1, height: 180, flexDirection: 'row', }}>
                                                 <View style={{ flex: 0.5, }}>
                                                     <View style={{ flex: 0.9, alignItems: 'center', justifyContent: 'flex-end', }}>
-                                                        <Image source={{ uri: medicineData.productImage }} style={{ width: 110, height: 140, borderRadius: 5 }} />
+                                                        <Image source={medicineData.productImage} style={{ width: 110, height: 140, borderRadius: 5 }} />
                                                     </View>
                                                     <View style={{ flex: 0.2, alignItems: 'center', }}>
                                                         <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 17, color: '#002F72' }}>{medicineData.productName}</Text>
@@ -165,7 +165,7 @@ function Pharmacy({ props, navigation }) {
                                                 </View>
                                                 <View style={{ flex: 0.5, }}>
                                                     <View style={{ flex: 0.9, alignItems: 'center', justifyContent: 'flex-end', }}>
-                                                        <Image source={{ uri: medicineData.productImage }} style={{ width: 110, height: 140, borderRadius: 5 }} />
+                                                        <Image source={medicineData.productImage} style={{ width: 110, height: 140, borderRadius: 5 }} />
                                                     </View>
                                                     <View style={{ flex: 0.2, alignItems: 'center', }}>
                                                         <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 17, color: '#002F72' }}>{medicineData.productName}</Text>
@@ -257,7 +257,7 @@ function Pharmacy({ props, navigation }) {
                                             <View key={index} style={{ flex: 1, height: 180, flexDirection: 'row', }}>
                                                 <View style={{ flex: 0.5, }}>
                                                     <View style={{ flex: 0.9, alignItems: 'center', justifyContent: 'flex-end', }}>
-                                                        <Image source={{ uri: groceryItem.productImage }} style={{ width: 110, height: 140, borderRadius: 5 }} />
+                                                        <Image source={groceryItem.productImage} style={{ width: 110, height: 140, borderRadius: 5 }} />
                                                     </View>
                                                     <View style={{ flex: 0.2, alignItems: 'center', }}>
                                                         <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 17, color: '#002F72' }}>{groceryItem.productName}</Text>
@@ -265,7 +265,7 @@ function Pharmacy({ props, navigation }) {
                                                 </View>
                                                 <View style={{ flex: 0.5, }}>
                                                     <View style={{ flex: 0.9, alignItems: 'center', justifyContent: 'flex-end', }}>
-                                                        <Image source={{ uri: groceryItem.productImage }} style={{ width: 110, height: 140, borderRadius: 5 }} />
+                                                        <Image source={groceryItem.productImage} style={{ width: 110, height: 140, borderRadius: 5 }} />
                                                     </View>
                                                     <View style={{ flex: 0.2, alignItems: 'center', }}>
                                                         <Text style={{ fontFamily: 'ProximaNova-Bold', fontSize: 17, color: '#002F72' }}>{groceryItem.productName}</Text>

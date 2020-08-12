@@ -10,7 +10,7 @@ function Loading({ navigation }) {
         const callScreen = () => {
             setTimeout(() => {
                 setIsLoading(false)
-                navigation.navigate('Login')
+                navigation.replace('Login')
             }, 2000)
         }
         callScreen()

@@ -11,23 +11,23 @@ class ImageSnapCarousel extends Component {
             activeSlide: '',
             images: [
                 {
-                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS5OMhEJsG7EylmLG5KHLgxMJ5jKfqKWr3oIA&usqp=CAU',
+                    image: require('../../assets/courosel1.jpg'),
                     caption: 'AVOID VISITING CROWDED PLACES'
                 },
                 {
-                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTM41cPGzZ-KjIKk0QLn_W5qJXPgrwdk0_1Eg&usqp=CAU',
+                    image: require('../../assets/courosel2.jpg'),
                     caption: 'STAY HOME STAY SAFE'
                 },
                 {
-                    image: 'https://www.pngkey.com/png/detail/84-847833_grocery-png-background-image-online-shopping-groceries.png',
+                    image: require('../../assets/courosel3.png'),
                     caption: 'KEEP YOUR HANDS CLEAN'
                 },
                 {
-                    image: 'https://img.freepik.com/free-photo/laptop-shopping-bags-online-shopping-concept_1423-189.jpg?size=626&ext=jpg',
+                    image: require('../../assets/courosel4.jpg'),
                     caption: 'USE FACE MASK IF YOU`RE FEELING UNWELL'
                 },
                 {
-                    image: 'https://p4.wallpaperbetter.com/wallpaper/145/876/936/doctor-medicine-nurse-wallpaper-preview.jpg',
+                    image: require('../../assets/courosel5.jpg'),
                     caption: 'AVOID PHYSICAL CONTACT WITH OTHER PEOPLE'
                 }
             ]
@@ -38,7 +38,7 @@ class ImageSnapCarousel extends Component {
         return (
             <View key={index} style={{ flex: 1 }}>
                 <Card elevation={10}>
-                    <Card.Cover source={{ uri: item.image }} style={{ width: 330, height: 120, }} />
+                    <Card.Cover source={item.image} style={{ width: 330, height: 120, }} />
                     {/* <Text style={{ textAlign: 'center', padding: 10, fontFamily: 'ProximaNova-Bold', color: '#002F72' }}>{item.caption}</Text> */}
                 </Card>
             </View>
