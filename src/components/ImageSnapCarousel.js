@@ -19,7 +19,7 @@ class ImageSnapCarousel extends Component {
                     caption: 'STAY HOME STAY SAFE'
                 },
                 {
-                    image: require('../../assets/courosel3.png'),
+                    image: require('../../assets/courosel3.jpg'),
                     caption: 'KEEP YOUR HANDS CLEAN'
                 },
                 {

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { View, Text, ImageBackground, Image } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { TextInput, } from 'react-native-paper'
+import { Icon } from 'react-native-elements'
+
 
 function MobileNumber({ navigation }) {
 
@@ -26,7 +28,7 @@ function MobileNumber({ navigation }) {
                             dense
                             onChangeText={isMobile => setIsMobile(isMobile)}
                         />
-                        <View style={{ flex: 0.2, backgroundColor: '#002F72', alignSelf: 'flex-end', padding: 10, marginTop: 10, borderRadius: 50, alignItems: 'center', justifyContent: 'center' }}>
+                        <View style={{ flex: 0.2, backgroundColor: '#002F72', alignSelf: 'flex-end', padding: 10, marginTop: 10, borderRadius: 50, alignItems: 'center', justifyContent: 'center' }} >
                             <MaterialCommunityIcons name="chevron-right" size={20} color="#fff" onPress={() => navigation.navigate('Verification')} />
                         </View>
                     </View>
